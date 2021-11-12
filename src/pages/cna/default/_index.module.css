@@ -1,3 +1,8 @@
+/*
+I don't want this file anywhere else to interfere
+so it can be deleted easily
+*/
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;

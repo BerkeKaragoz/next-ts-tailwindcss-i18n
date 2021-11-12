@@ -1,0 +1,20 @@
+.root {
+  background-image: repeating-conic-gradient(
+    from 45deg,
+    theme("colors.background.50") 0deg 90deg,
+    theme("colors.background.100") 90deg 180deg
+  );
+  background-size: 33vh 33vh;
+}
+
+.dList {
+  @apply mt-4;
+}
+
+.dList dt {
+  @apply text-lg font-medium leading-8 sm:font-semibold;
+}
+
+.dList dd {
+  @apply indent-xs sm:indent-sm;
+}

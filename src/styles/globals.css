@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .link {
+    @apply text-primary-600 hover:text-secondary-500 hover:underline;
+  }
+}
+
+a[href]:not([hidden]):not(.unstyled-a) {
+  @apply link;
+}

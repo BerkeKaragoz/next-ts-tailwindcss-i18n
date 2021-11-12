@@ -1,3 +1,18 @@
+# berkekaragoz.com
+
+## Extensions / Snippets
+
+`berkekaragoz-general`
+
+### VSCode
+
+Headwind
+
+## Notes
+
+- Use theme colors with tailwindcss.
+- Care animation preference
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
