@@ -1,0 +1,23 @@
+{
+  "index": {
+    "pageTitle": "Hi, I'm <br/> <1>{{name}}</1>.",
+    "pageSubtitle": "I made this boilerplate while developing <1>my personal website</1>.",
+    "nextjsDesc": "Amazing developer experience.",
+    "tsDesc": "Safety and tight integration with your editor.",
+    "tailwindcssDesc": "A rapid and utility-first CSS framework.",
+    "themeColors": "Theme Colors",
+    "i18nextDesc": "Internationalization framework for Next.js which uses <1>react-i18next</1> under the hood.",
+    "atomicDesignDesc": "Methodology for creating design systems.",
+    "errorPageTerm": "Error Page Template",
+    "errorPageDesc": "<1>404</1> and <3>500</3> error pages do exist as a sample.",
+    "heightBreakpointsTerm": "Height Breakpoints and Media Queries",
+    "importPathTerm": "Import Path Aliases",
+    "recommendedVSCodeTerm": "Recommended VSCode Extensions",
+    "cnaSamplesTerm": "CNA Samples",
+    "cnaSamplesDesc": "You can check out modified <1>Create Next App</1> welcome pages as small examples.",
+    "otherCheckSnippetsDesc": "Check the snippets under <1>.vscode</1>.",
+    "otherCareMotionDesc": "Care motion and color scheme preference.",
+    "otherTryToUseDesc": "Try to use text-direction sensitive properties.",
+    "otherUseEmmetDesc": "Use <1>Emmet</1>."
+  }
+}

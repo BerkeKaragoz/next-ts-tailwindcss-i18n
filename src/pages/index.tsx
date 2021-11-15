@@ -1,9 +1,16 @@
-import { NextPage } from "next";
+import { LinkText } from "@/components/atomic/LinkText";
+import { GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import styles from "@/styles/pages/index.module.css";
+import { GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
+import { Trans, useTranslation } from "react-i18next";
 
 const Homepage: NextPage = () => {
+  const { t } = useTranslation([PAGES_TNS], { keyPrefix: "index" });
+  const { t: gt } = useTranslation([GLOSSARY_TNS]);
+
   return (
     <div
       className={
@@ -18,35 +25,42 @@ const Homepage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="max-w-lg px-2 py-8">
-        <h1 className="mb-1 text-5xl font-semibold cursor-default select-none sm:text-6xl">
-          {"Hi, I'm"}
-          <br />
-          <a
-            href="https://www.linkedin.com/in/berkekaragoz/"
-            className="font-bold cursor-pointer select-text link"
-          >
-            {"E. Berke Karagöz"}
-          </a>
-          .
+        <h1 className="mb-1 text-5xl font-semibold capitalize cursor-default select-none sm:text-6xl">
+          <Trans
+            t={t}
+            i18nKey="pageTitle"
+            values={{ name: "E. Berke Karagöz" }}
+            components={{
+              1: (
+                <a
+                  href="https://www.linkedin.com/in/berkekaragoz/"
+                  className="font-bold cursor-pointer select-text link"
+                />
+              ),
+            }}
+          ></Trans>
         </h1>
         <p className="max-w-sm text-xl font-medium select-none">
-          I made this boilerplate while developing{" "}
-          <a href="https://berkekaragoz.com">my personal website</a>.
+          <Trans
+            t={t}
+            i18nKey="pageSubtitle"
+            components={{ 1: <a href="https://berkekaragoz.com" /> }}
+          />
         </p>
         <dl className={styles.dList}>
           <dt>
             <a href="https://nextjs.org/">Next.js</a>
           </dt>
-          <dd>Amazing developer experience.</dd>
+          <dd>{t("nextjsDesc")}</dd>
           <dt>
             <a href="https://www.typescriptlang.org/">TypeScript</a>
           </dt>
-          <dd>Safety and tight integration with your editor.</dd>
+          <dd>{t("tsDesc")}</dd>
           <dt>
             <a href="https://tailwindcss.com/">Tailwind CSS</a>
           </dt>
           <dd>
-            A rapid and utility-first CSS framework.{" "}
+            {t("tailwindcssDesc")}
             <ul className="ms-2 sm:ms-4 indent-xs sm:indent-sm">
               <li>
                 <a href="https://v1.tailwindcss.com/docs/typography-plugin">
@@ -58,44 +72,67 @@ const Homepage: NextPage = () => {
                   tailwindcss-rtl
                 </a>
                 <i className="text-sm">
-                  {" "}
-                  (by <a href="https://github.com/20lives">20lives</a>)
+                  {" ("}
+                  <Trans
+                    t={gt}
+                    i18nKey="by_someone"
+                    values={{ name: "20lives" }}
+                  >
+                    by <a href="https://github.com/20lives">20lives</a>
+                  </Trans>
+                  {")"}
                 </i>
               </li>
               <li>
-                Theme Colors
+                {t("themeColors")}
                 <code className="block text-sm ms-6">
                   {`primary, secondary, accent, background`}
                 </code>
               </li>
             </ul>
           </dd>
-          <dt>i18n</dt>
-          <dd>To be added.</dd>
+          <dt>
+            <a href="https://github.com/isaachinman/next-i18next">
+              next-i18next
+            </a>
+          </dt>
+          <dd>
+            <Trans t={t} i18nKey="i18nextDesc">
+              {"Internationalization framework for Next.js which uses "}
+              <a href="https://react.i18next.com/">react-i18next</a> under the
+              hood.
+            </Trans>
+          </dd>
           <hr className="my-1" />
           <dt>
             <a href="https://bradfrost.com/blog/post/atomic-web-design/">
               atomic design
             </a>
           </dt>
-          <dd>Methodology for creating design systems.</dd>
+          <dd>{t("atomicDesignDesc")}</dd>
           <hr className="my-1" />
-          <dt>Error Page Template</dt>
+          <dt>{t("errorPageTerm")}</dt>
           <dd>
-            <Link href="/404">404</Link> and <Link href="/500">500</Link> error
-            pages do exist as a sample.
+            <Trans
+              t={t}
+              i18nKey="errorPageDesc"
+              components={{
+                1: <LinkText href="/404" />,
+                3: <LinkText href="/500" />,
+              }}
+            />
           </dd>
-          <dt>Height Breakpoints and Media Queries</dt>
+          <dt>{t("heightBreakpointsTerm")}</dt>
           <dd>
             <code>xsh, smh, mdh, lgh, xlh</code>.
           </dd>
-          <dt>Import Path Aliases</dt>
+          <dt>{t("importPathTerm")}</dt>
           <dd>
-            <code>@/components</code>, <code>@/lib</code> and{" "}
+            <code>@/components</code>, <code>@/lib</code> {gt("and")}{" "}
             <code>@/styles</code>.
           </dd>
           <hr className="my-1" />
-          <dt>Recommended VSCode Extensions</dt>
+          <dt>{t("recommendedVSCodeTerm")}</dt>
           <dd>
             <a href="https://marketplace.visualstudio.com/items?itemName=heybourn.headwind">
               Headwind
@@ -104,36 +141,63 @@ const Homepage: NextPage = () => {
             <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">
               Auto Rename Tag
             </a>{" "}
-            {" and "}
+            {` ${gt("and")} `}
             <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">
               Prettier
             </a>
             .
           </dd>
           <dt>
-            <Link href="/cna">CNA Samples</Link>
+            <Link href="/cna">{t("cnaSamplesTerm")}</Link>
           </dt>
           <dd>
-            You can check out modified{" "}
-            <a href="https://nextjs.org/docs/api-reference/create-next-app">
-              Create Next App
-            </a>{" "}
-            welcome pages as small examples.
+            <Trans
+              t={t}
+              i18nKey="cnaSamplesDesc"
+              components={{
+                1: (
+                  <a href="https://nextjs.org/docs/api-reference/create-next-app" />
+                ),
+              }}
+            />
           </dd>
-          <dt>Other</dt>
+          <dt className="capitalize">{gt("other")}</dt>
           <dd>
-            Check the snippets under <code>.vscode</code>.
+            <Trans
+              t={t}
+              i18nKey="otherCheckSnippetsDesc"
+              components={{ 1: <code /> }}
+            />
           </dd>
-          <dd>Care motion and color scheme preference.</dd>
-          <dd>Try to use text-direction sensitive properties.</dd>
+          <dd>{t("otherCareMotionDesc")}</dd>
+          <dd>{t("otherTryToUseDesc")}</dd>
           <dd>
-            Use{" "}
-            <a href="https://code.visualstudio.com/docs/editor/emmet">Emmet</a>.
+            <Trans t={t} i18nKey="otherUseEmmetDesc">
+              {"Use "}
+              <a href="https://code.visualstudio.com/docs/editor/emmet">
+                Emmet
+              </a>
+              .
+            </Trans>
           </dd>
         </dl>
       </div>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { locale } = ctx;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", [
+        PAGES_TNS,
+        GLOSSARY_TNS,
+      ])),
+      // Will be passed to the page component as props
+    },
+  };
 };
 
 export default Homepage;

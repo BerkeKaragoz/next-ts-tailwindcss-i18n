@@ -1,0 +1,23 @@
+{
+  "index": {
+    "pageTitle": "Merhaba, ben <br/> <1>{{name}}</1>.",
+    "pageSubtitle": "Bu şablonu <1>kendi websitemi</1> geliştirirken yaptım.",
+    "nextjsDesc": "Müthiş bir yazılımcı deneyimi.",
+    "tsDesc": "Güvence ve editörünüz ile sıkı entegrasyon.",
+    "tailwindcssDesc": "Seri ve kullanışlılığı önde tutan bir CSS framework'ü.",
+    "themeColors": "Tema Renkleri",
+    "i18nextDesc": "Arkaplanda <1>react-i18next</1> kullanan, Next.js için bir internationalization framework'ü.",
+    "atomicDesignDesc": "Sistem tasarımı için bir metodoloji.",
+    "errorPageTerm": "Hata Sayfası Şablonu",
+    "errorPageDesc": "Örnek olsun diye <1>404</1> ve <3>500</3> sayfaları hali hazırda bulunuyor.",
+    "heightBreakpointsTerm": "Yükseklik Breakpoint'leri ve Media Query'leri",
+    "importPathTerm": "Import Path Kısayolları",
+    "recommendedVSCodeTerm": "Önerilen VSCode Eklentileri",
+    "cnaSamplesTerm": "CNA Örnekleri",
+    "cnaSamplesDesc": "Küçük örnekler olsun diye modifiye edilmiş <1>Create Next App</1> welcome sayfaları.",
+    "otherCheckSnippetsDesc": "<1>.vscode</1> dizini altındaki kod kısayollarına bakın.",
+    "otherCareMotionDesc": "Hareket ve renk şeması tercihlerine önem verin.",
+    "otherTryToUseDesc": "Yazı yönüne uygun değerler kullanmaya çalışın.",
+    "otherUseEmmetDesc": "<1>Emmet</1> kullanın."
+  }
+}
