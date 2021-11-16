@@ -1,8 +1,11 @@
-import LinkBox from "@/components/atomic/LinkBox";
-import { NextPage } from "next";
+import LinkBox from "@/components/atomic/LinkBox/LinkBox";
+import { PAGES_TNS } from "@/lib/i18n/consts";
+import { GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Image from "next/image";
 import { FC } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 const CardItem: FC<{ title?: string; subtitle?: string; href: string }> = (
   props,
@@ -21,62 +24,67 @@ const CardItem: FC<{ title?: string; subtitle?: string; href: string }> = (
 };
 
 const Tailwind: NextPage = () => {
+  const { t } = useTranslation([PAGES_TNS], { keyPrefix: "cna.custom" });
+
   return (
     <div className="flex flex-col min-h-screen text-center">
       <Head>
-        <title>CNA with Tailwind CSS</title>
-        <meta
-          name="description"
-          content="Create Next App page with Tailwind CSS"
-        />
+        <title>{t("documentTitle")}</title>
+        <meta name="description" content={t("documentDesc")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col items-center justify-center flex-grow">
         <h1 className="mb-2 text-6xl">
-          Welcome to{" "}
-          <a
-            href="https://nextjs.org"
-            className="text-blue-600 hover:underline"
-          >
-            Next.js!
-          </a>
+          <Trans t={t} i18nKey="pageTitle">
+            {"Welcome to "}
+            <a href="https://nextjs.org" className="link">
+              Next.js
+            </a>
+            !
+          </Trans>
         </h1>
         <p className="text-2xl">
-          Get started by editing{" "}
-          <code className="px-2 py-1 text-xl bg-gray-100">pages/index.js</code>{" "}
-          with{" "}
-          <a
-            href="https://tailwindcss.com"
-            className="text-blue-600 hover:underline"
-          >
-            Tailwind CSS
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://www.typescriptlang.org"
-            className="text-blue-600 hover:underline"
-          >
-            TypeScript.
-          </a>
+          <Trans t={t} i18nKey="pageSubtitle">
+            {"Get started by editing "}
+            <code className="px-2 py-1 text-xl bg-gray-100">
+              pages/index.tsx
+            </code>
+            {" with "}
+            <a href="https://tailwindcss.com" className="link">
+              Tailwind CSS
+            </a>
+            {", "}
+            <a
+              href="https://github.com/isaachinman/next-i18next"
+              className="link"
+            >
+              next-i18next
+            </a>
+            {" and "}
+            <a href="https://www.typescriptlang.org" className="link">
+              TypeScript
+            </a>
+            .
+          </Trans>
         </p>
         <div className="grid mt-4 lg:grid-cols-2">
-          <CardItem title="Documentation" href="https://nextjs.org/docs">
-            Find in-depth information about Next.js features and API.
+          <CardItem title={t("docsTitle")} href="https://nextjs.org/docs">
+            {t("docsDesc")}
           </CardItem>
-          <CardItem title="Learn" href="https://nextjs.org/learn">
-            Learn about Next.js in an interactive course with quizzes!
+          <CardItem title={t("learnTitle")} href="https://nextjs.org/learn">
+            {t("learnDesc")}
           </CardItem>
           <CardItem
-            title="Examples"
+            title={t("examplesTitle")}
             href="https://github.com/vercel/next.js/tree/master/examples"
           >
-            Discover and deploy boilerplate example Next.js projects.
+            {t("examplesDesc")}
           </CardItem>
           <CardItem
-            title="Deploy"
+            title={t("deployTitle")}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           >
-            Instantly deploy your Next.js site to a public URL with Vercel.
+            {t("deployDesc")}
           </CardItem>
         </div>
       </main>
@@ -87,7 +95,7 @@ const Tailwind: NextPage = () => {
           rel="noopener noreferrer"
           className="flex items-center justify-center flex-grow unstyled-a"
         >
-          Powered by{" "}
+          {"Powered by "}
           <span className="h-4 ml-2">
             <Image
               src="/assets/vercel.svg"
@@ -100,6 +108,16 @@ const Tailwind: NextPage = () => {
       </footer>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { locale } = ctx;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", [PAGES_TNS])),
+    },
+  };
 };
 
 export default Tailwind;

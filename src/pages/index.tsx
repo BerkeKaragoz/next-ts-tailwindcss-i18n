@@ -1,4 +1,4 @@
-import { LinkText } from "@/components/atomic/LinkText";
+import { LinkText } from "@/components/atomic/LinkText/LinkText";
 import { GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import styles from "@/styles/pages/index.module.css";
 import { GetStaticProps, NextPage } from "next";
@@ -103,6 +103,8 @@ const Homepage: NextPage = () => {
               hood.
             </Trans>
           </dd>
+          <dt>Testing</dt>
+          <dd>To be added.</dd>
           <hr className="my-1" />
           <dt>
             <a href="https://bradfrost.com/blog/post/atomic-web-design/">
@@ -128,8 +130,8 @@ const Homepage: NextPage = () => {
           </dd>
           <dt>{t("importPathTerm")}</dt>
           <dd>
-            <code>@/components</code>, <code>@/lib</code> {gt("and")}{" "}
-            <code>@/styles</code>.
+            <code>@/components</code>, <code>@/lib</code>, <code>@/styles</code>{" "}
+            {gt("and")} <code>@/pages</code>.
           </dd>
           <hr className="my-1" />
           <dt>{t("recommendedVSCodeTerm")}</dt>

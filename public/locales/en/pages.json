@@ -19,5 +19,30 @@
     "otherCareMotionDesc": "Care motion and color scheme preference.",
     "otherTryToUseDesc": "Try to use text-direction sensitive properties.",
     "otherUseEmmetDesc": "Use <1>Emmet</1>."
+  },
+  "cna": {
+    "index": {
+      "documentTitle": "CNA Welcome Pages",
+      "documentDesc": "Create Next App pages.",
+      "pageTitle": "<0>Create Next App</0> Welcome Pages",
+      "pageSubtitle": "I keep them for showing samples.",
+      "defaultDesc": "CNA page that comes with initial Next.js project.",
+      "customDesc": "CNA page that I wrote with <1>Tailwind CSS</1> as an example."
+    },
+    "default": {},
+    "custom": {
+      "documentTitle": "Custom CNA | Boilerplate",
+      "documentDesc": "Create Next App page with Tailwind CSS",
+      "pageTitle": "Welcome to <1>Next.js</1>!",
+      "pageSubtitle": "Get started by editing <1>pages/index.tsx</1> with <3>Tailwind CSS</3>, <5>next-i18next</5> and <7>TypeScript</7>.",
+      "docsTitle": "Documentation",
+      "docsDesc": "Find in-depth information about Next.js features and API.",
+      "learnTitle": "Learn",
+      "learnDesc": "Learn about Next.js in an interactive course with quizzes!",
+      "examplesTitle": "Examples",
+      "examplesDesc": "Discover and deploy boilerplate example Next.js projects.",
+      "deployTitle": "Deploy",
+      "deployDesc": "Instantly deploy your Next.js site to a public URL with Vercel."
+    }
   }
 }

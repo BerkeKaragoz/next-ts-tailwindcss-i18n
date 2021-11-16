@@ -16,8 +16,33 @@
     "cnaSamplesTerm": "CNA Örnekleri",
     "cnaSamplesDesc": "Küçük örnekler olsun diye modifiye edilmiş <1>Create Next App</1> welcome sayfaları.",
     "otherCheckSnippetsDesc": "<1>.vscode</1> dizini altındaki kod kısayollarına bakın.",
-    "otherCareMotionDesc": "Hareket ve renk şeması tercihlerine önem verin.",
+    "otherCareMotionDesc": "Animasyon ve renk şeması tercihlerine önem verin.",
     "otherTryToUseDesc": "Yazı yönüne uygun değerler kullanmaya çalışın.",
     "otherUseEmmetDesc": "<1>Emmet</1> kullanın."
+  },
+  "cna": {
+    "index": {
+      "documentTitle": "CNA Giriş Sayfaları",
+      "documentDesc": "Create Next App sayfaları.",
+      "pageTitle": "<0>Create Next App</0> Giriş Sayfaları",
+      "pageSubtitle": "Bunları örnek gösterebilmek için tutuyorum.",
+      "defaultDesc": "CNA ile birlikte gelen Next.js başlangıç sayfası.",
+      "customDesc": "Örnek olsun diye <1>Tailwind CSS</1> ile yazdığım CNA sayfası."
+    },
+    "default": {},
+    "custom": {
+      "documentTitle": "Custom CNA | Şablon",
+      "documentDesc": "Tailwind CSS ile Create Next App",
+      "pageTitle": "<1>Next.js</1>'e Hoşgeldiniz!",
+      "pageSubtitle": "<3>Tailwind CSS</3>, <5>next-i18next</5> ve <7>TypeScript</7> ile <1>pages/index.tsx</1>'i düzenleyerek başlayın.",
+      "docsTitle": "Dökümantasyon",
+      "docsDesc": "Next.js özellikleri ve API'yı hakkında bilgiler edinin.",
+      "learnTitle": "Öğren",
+      "learnDesc": "İnteraktif bir kursun içinde quizlerle beraber Next.js'i öğrenin!",
+      "examplesTitle": "Örnekler",
+      "examplesDesc": "Örnek Next.js şablonlarını keşfededin ve kullanın.",
+      "deployTitle": "Yayınla",
+      "deployDesc": "Vercel ile Next.js sitenizi herkese açık bir URL'de yayınlayın."
+    }
   }
 }
