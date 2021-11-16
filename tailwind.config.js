@@ -53,17 +53,22 @@ module.exports = {
       //componentPrefix: "c-", // the prefix to use for text style classes
     }),
     require("tailwindcss-rtl"),
-    // Add custom plugins:
-    // plugin(({ addUtilities }) => {
-    //   const extendTextAlign = {
-    //     ".text-start": {
-    //       textAlign: "start",
-    //     },
-    //     ".text-end": {
-    //       textAlign: "end",
-    //     },
-    //   };
-    //   addUtilities(extendTextAlign, ["responsive"]);
-    // }),
+    // Add custom plugins as such:
+    plugin(({ addUtilities }) => {
+      const extendTextTransform = {
+        ".uppercase-first": {
+          "&::first-letter": {
+            textTransform: "uppercase",
+          },
+        },
+        ".uppercase-firstOnly": {
+          textTransform: "lowercase",
+          "&::first-letter": {
+            textTransform: "uppercase",
+          },
+        },
+      };
+      addUtilities(extendTextTransform, ["responsive"]);
+    }),
   ],
 };
