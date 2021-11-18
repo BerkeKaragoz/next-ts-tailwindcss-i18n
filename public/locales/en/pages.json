@@ -7,6 +7,7 @@
     "tailwindcssDesc": "A rapid and utility-first CSS framework.",
     "themeColors": "Theme Colors",
     "i18nextDesc": "Internationalization framework for Next.js which uses <1>react-i18next</1> under the hood.",
+    "testingDesc": "Popular testing tools.",
     "atomicDesignDesc": "Methodology for creating design systems.",
     "errorPageTerm": "Error Page Template",
     "errorPageDesc": "<1>404</1> and <3>500</3> error pages do exist as a sample.",

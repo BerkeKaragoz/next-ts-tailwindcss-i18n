@@ -1,16 +1,17 @@
 import { COMMON_TNS } from "@/lib/i18n/consts";
 import Link from "next/link";
-import { WithTranslation, withTranslation } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { UrlObject } from "url";
+import { ComponentPropsWithTranslation } from "@/lib/types/i18n";
 
-type ErrorPageProps = WithTranslation & {
+type ErrorPageProps = ComponentPropsWithTranslation<{
   code?: number | string;
   redCode?: boolean;
   href?: string | UrlObject;
   linkMessage?: string;
-};
+}>;
 
-const ErrorPage: React.FC<ErrorPageProps> = (props) => {
+export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
   const { children, t, code, redCode, href, linkMessage } = props;
 
   return (
@@ -18,6 +19,7 @@ const ErrorPage: React.FC<ErrorPageProps> = (props) => {
       <div className="flex-shrink-0">
         <div className="absolute transform -translate-y-12 xsh:-translate-x-12 xsh:-translate-y-28">
           <code
+            data-testid="error-code"
             className={
               "opacity-25 text-6xl xsh:text-9xl  motion-safe:animate-pulse " +
               (redCode && "text-red-800")
@@ -27,7 +29,7 @@ const ErrorPage: React.FC<ErrorPageProps> = (props) => {
           </code>
         </div>
         <h1 className="items-center text-4xl font-bold uppercase-first">
-          {children || "An error occured."}
+          {children || t("an error occured") + "."}
         </h1>
         <hr className="w-4/6 h-1 mx-auto my-4 bg-secondary-400" />
         <Link href={href || "/"}>
@@ -43,4 +45,5 @@ const ErrorPage: React.FC<ErrorPageProps> = (props) => {
     </div>
   );
 };
+
 export default withTranslation(COMMON_TNS)(ErrorPage);

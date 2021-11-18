@@ -1,0 +1,7 @@
+{
+  "Test Case": {
+    "prefix": "ttest",
+    "scope": "javascriptreact,typescriptreact",
+    "body": ["it(\"${1:Enter the test name.}\", ()=> {", "$0", "})"]
+  }
+}
