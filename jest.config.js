@@ -22,7 +22,7 @@ module.exports = {
       "<rootDir>/src/__mocks__/file.mock.js",
 
     /* i18n */
-    i18next: "<rootDir>/src/__mocks__/i18next.mock.ts",
+    i18next: "<rootDir>/src/__mocks__/i18next.mock.js",
     createRouter: "<rootDir>/src/__mocks__/createRouter.mock.ts",
   },
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],

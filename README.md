@@ -1,21 +1,38 @@
 # berkekaragoz.com
 
-## Extensions / Snippets
+Next.js
+Amazing developer experience.
+TypeScript
+Safety and tight integration with your editor.
+Tailwind CSS
+A rapid and utility-first CSS framework.
+@tailwindcss/typography
+tailwindcss-rtl (by 20lives)
+Theme Colors
+primary, secondary, accent, background
+next-i18next
+Internationalization framework for Next.js which uses react-i18next under the hood.
+Jest and React Testing Library
+Popular testing tools.
+atomic design
+Methodology for creating design systems.
+Error Page Template
+404 and 500 error pages do exist as a sample.
+Height Breakpoints and Media Queries
+xsh, smh, mdh, lgh, xlh.
+Import Path Aliases
+@/components, @/lib, @/styles...
+Recommended VSCode Extensions
+Headwind, Auto Rename Tag and Prettier.
+CNA Samples
+You can check out modified Create Next App welcome pages as small examples.
+Other
+Check the snippets under .vscode.
+Care motion and color scheme preference.
+Try to use text-direction sensitive properties.
+Use Emmet.
 
-`berkekaragoz-general`
-
-### VSCode
-
-Headwind
-
-## Notes
-
-- Use theme colors with tailwindcss.
-- Care animation preference
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
+## Getting Started with Next.js
 
 First, run the development server:
 

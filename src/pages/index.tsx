@@ -20,8 +20,11 @@ const Homepage: NextPage = () => {
       }
     >
       <Head>
-        <title>E. Berke Karagöz</title>
-        <meta name="description" content="E. Berke Karagöz Website" />
+        <title>next-ts-tailwindcss-i18n-boilerplate</title>
+        <meta
+          name="description"
+          content="A boilerplate made for E. Berke Karagöz's website."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="max-w-lg px-2 py-8">

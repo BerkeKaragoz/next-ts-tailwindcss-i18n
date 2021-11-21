@@ -3,6 +3,7 @@ import Link from "next/link";
 import { withTranslation } from "react-i18next";
 import { UrlObject } from "url";
 import { ComponentPropsWithTranslation } from "@/lib/types/i18n";
+import Head from "next/head";
 
 type ErrorPageProps = ComponentPropsWithTranslation<{
   code?: number | string;
@@ -15,7 +16,10 @@ export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
   const { children, t, code, redCode, href, linkMessage } = props;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center">
+    <main className="flex flex-col items-center justify-center min-h-screen text-center">
+      <Head>
+        <title>{`${code || "Unknown"} Error`}</title>
+      </Head>
       <div className="flex-shrink-0">
         <div className="absolute transform -translate-y-12 xsh:-translate-x-12 xsh:-translate-y-28">
           <code
@@ -42,7 +46,7 @@ export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
         className="flex-shrink hidden xsh:block xsh:bg-red-800"
         style={{ minHeight: "20vh" }}
       />
-    </div>
+    </main>
   );
 };
 
