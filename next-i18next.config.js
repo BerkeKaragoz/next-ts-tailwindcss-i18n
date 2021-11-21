@@ -5,5 +5,5 @@ module.exports = {
   },
   defaultNS: "common",
   react: { useSuspense: false }, //TEMP
-  reloadOnPrerender: true, // DEVELOPMENT-ONLY
+  reloadOnPrerender: process.env.NODE_ENV !== "production", // DEVELOPMENT-ONLY, IMPORTANT!
 };

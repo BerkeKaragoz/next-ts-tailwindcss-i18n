@@ -1,11 +1,11 @@
 import LinkText from "@/components/atomic/LinkText/LinkText";
 import { GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
-import styles from "@/styles/pages/index.module.css";
 import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
 import { Trans, useTranslation } from "react-i18next";
+import styles from "./index.module.css";
 
 const Homepage: NextPage = () => {
   const { t } = useTranslation([PAGES_TNS], { keyPrefix: "index" });
@@ -20,14 +20,14 @@ const Homepage: NextPage = () => {
       }
     >
       <Head>
-        <title>next-ts-tailwindcss-i18n-boilerplate</title>
+        <title>next-ts-tailwindcss-i18n</title>
         <meta
           name="description"
           content="A boilerplate made for E. Berke Karagöz's website."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-lg px-2 py-8">
+      <main className="max-w-lg px-2 py-8">
         <h1 className="mb-1 text-5xl font-semibold capitalize cursor-default select-none sm:text-6xl">
           <Trans
             t={t}
@@ -191,7 +191,7 @@ const Homepage: NextPage = () => {
             </Trans>
           </dd>
         </dl>
-      </div>
+      </main>
     </div>
   );
 };

@@ -1,32 +1,58 @@
-# berkekaragoz.com
+# next-ts-tailwindcss-i18n
 
-Next.js
+**I made this boilerplate while developing [my personal website](https://berkekaragoz.com).**
+
+### Next.js
+
 Amazing developer experience.
-TypeScript
+
+### TypeScript
+
 Safety and tight integration with your editor.
-Tailwind CSS
+
+### Tailwind CSS
+
 A rapid and utility-first CSS framework.
-@tailwindcss/typography
-tailwindcss-rtl (by 20lives)
-Theme Colors
-primary, secondary, accent, background
-next-i18next
+
+- @tailwindcss/typography
+- tailwindcss-rtl (by 20lives)
+- Theme Colors
+- `primary, secondary, accent, background`
+
+### next-i18next
+
 Internationalization framework for Next.js which uses react-i18next under the hood.
-Jest and React Testing Library
-Popular testing tools.
-atomic design
+
+### Jest and React Testing Library
+
+Generic testing tools.
+
+### atomic design
+
 Methodology for creating design systems.
-Error Page Template
+
+### Error Page Template
+
 404 and 500 error pages do exist as a sample.
-Height Breakpoints and Media Queries
+
+### Height Breakpoints and Media Queries
+
 xsh, smh, mdh, lgh, xlh.
-Import Path Aliases
-@/components, @/lib, @/styles...
-Recommended VSCode Extensions
+
+### Import Path Aliases
+
+`@/components`, `@/lib`, `@/styles`...
+
+### Recommended VSCode Extensions
+
 Headwind, Auto Rename Tag and Prettier.
-CNA Samples
+
+### CNA Samples
+
 You can check out modified Create Next App welcome pages as small examples.
-Other
+
+### Other
+
 Check the snippets under .vscode.
 Care motion and color scheme preference.
 Try to use text-direction sensitive properties.

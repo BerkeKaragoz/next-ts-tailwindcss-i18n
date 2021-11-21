@@ -11,7 +11,7 @@ const CreateNextApp: NextPage = () => {
   const { t } = useTranslation([PAGES_TNS], { keyPrefix: "cna.index" });
 
   return (
-    <div className="container flex flex-col justify-center min-h-screen m-auto text-center">
+    <main className="container flex flex-col justify-center min-h-screen m-auto text-center">
       <Head>
         <title>{t("documentTitle")}</title>
         <meta name="description" content={t("documentDesc")} />
@@ -57,7 +57,7 @@ const CreateNextApp: NextPage = () => {
           </p>
         </LinkBox>
       </div>
-    </div>
+    </main>
   );
 };
 
