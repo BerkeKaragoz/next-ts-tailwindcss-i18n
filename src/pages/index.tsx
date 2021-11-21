@@ -7,9 +7,28 @@ import Link from "next/link";
 import { Trans, useTranslation } from "react-i18next";
 import styles from "./index.module.css";
 
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { locale } = ctx;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", [
+        PAGES_TNS,
+        GLOSSARY_TNS,
+      ])),
+      // Will be passed to the page component as props
+    },
+  };
+};
+
 const Homepage: NextPage = () => {
-  const { t } = useTranslation([PAGES_TNS], { keyPrefix: "index" });
+  const { t, i18n } = useTranslation([PAGES_TNS], { keyPrefix: "index" });
   const { t: gt } = useTranslation([GLOSSARY_TNS]);
+
+  const handleSelectLang = (event: any) => {
+    const l = event.target.value;
+    i18n.changeLanguage(l);
+  };
 
   return (
     <div
@@ -27,6 +46,21 @@ const Homepage: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header>
+        <label htmlFor="lang" className="inline-block uppercase-first">
+          {gt("language")}:
+        </label>
+        <select
+          name="lang"
+          id="lang"
+          className="p-1 m-2 border-2 rounded-lg cursor-pointer focus:ring-2"
+          onChange={handleSelectLang}
+          defaultValue={i18n.language}
+        >
+          <option value="en">EN</option>
+          <option value="tr">TR</option>
+        </select>
+      </header>
       <main className="max-w-lg px-2 py-8">
         <h1 className="mb-1 text-5xl font-semibold capitalize cursor-default select-none sm:text-6xl">
           <Trans
@@ -41,7 +75,17 @@ const Homepage: NextPage = () => {
                 />
               ),
             }}
-          ></Trans>
+          >
+            {"Hi, I'm "}
+            <br />
+            <a
+              href="https://www.linkedin.com/in/berkekaragoz/"
+              className="font-bold cursor-pointer select-text link"
+            >
+              E. Berke Karagöz
+            </a>
+            {"."}
+          </Trans>
         </h1>
         <p className="max-w-sm text-xl font-medium select-none">
           <Trans
@@ -194,20 +238,6 @@ const Homepage: NextPage = () => {
       </main>
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { locale } = ctx;
-
-  return {
-    props: {
-      ...(await serverSideTranslations(locale || "en", [
-        PAGES_TNS,
-        GLOSSARY_TNS,
-      ])),
-      // Will be passed to the page component as props
-    },
-  };
 };
 
 export default Homepage;
