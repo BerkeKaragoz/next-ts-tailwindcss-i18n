@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-background-100 bg-opacity-80 dark:bg-background-900 dark:bg-opacity-80 backdrop-filter backdrop-blur-lg">
+    <header className="fixed top-0 w-full px-2 bg-background-100 bg-opacity-80 dark:bg-background-900 dark:bg-opacity-80 backdrop-filter backdrop-blur-lg">
       <div className="flex items-center justify-between max-w-lg m-auto">
         <div>
           <label htmlFor="lang" className="inline-block uppercase-first">
@@ -53,6 +53,12 @@ export const Header: React.FC<HeaderProps> = (props) => {
             ))}
           </select>
         </div>
+        <a
+          className="link"
+          href="https://github.com/BerkeKaragoz/next-ts-tailwindcss-i18n"
+        >
+          GitHub
+        </a>
         <Switch
           onClick={switchTheme}
           defaultChecked={theme === "light"}

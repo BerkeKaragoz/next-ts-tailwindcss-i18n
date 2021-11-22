@@ -8,7 +8,7 @@
   }
 
   .dark .link {
-    @apply text-primary-400;
+    @apply text-primary-400 hover:text-secondary-500;
   }
 }
 
