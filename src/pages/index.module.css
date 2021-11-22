@@ -18,3 +18,12 @@
 .dList dd {
   @apply indent-xs sm:indent-sm;
 }
+
+:global(.dark) .root {
+  background-image: linear-gradient(
+    theme("colors.background.800"),
+    theme("colors.background.900")
+  );
+
+  background-size: cover;
+}

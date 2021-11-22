@@ -1,5 +1,6 @@
 import LinkText from "@/components/atomic/LinkText/LinkText";
-import { GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
+import { Header } from "@/components/organism/Header/Header";
+import { COMMON_TNS, GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -15,6 +16,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       ...(await serverSideTranslations(locale || "en", [
         PAGES_TNS,
         GLOSSARY_TNS,
+        COMMON_TNS,
       ])),
       // Will be passed to the page component as props
     },
@@ -22,13 +24,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 };
 
 const Homepage: NextPage = () => {
-  const { t, i18n } = useTranslation([PAGES_TNS], { keyPrefix: "index" });
+  const { t } = useTranslation([PAGES_TNS], { keyPrefix: "index" });
   const { t: gt } = useTranslation([GLOSSARY_TNS]);
-
-  const handleSelectLang = (event: any) => {
-    const l = event.target.value;
-    i18n.changeLanguage(l);
-  };
 
   return (
     <div
@@ -46,21 +43,7 @@ const Homepage: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <label htmlFor="lang" className="inline-block uppercase-first">
-          {gt("language")}:
-        </label>
-        <select
-          name="lang"
-          id="lang"
-          className="p-1 m-2 border-2 rounded-lg cursor-pointer focus:ring-2"
-          onChange={handleSelectLang}
-          defaultValue={i18n.language}
-        >
-          <option value="en">EN</option>
-          <option value="tr">TR</option>
-        </select>
-      </header>
+      <Header />
       <main className="max-w-lg px-2 py-8">
         <h1 className="mb-1 text-5xl font-semibold capitalize cursor-default select-none sm:text-6xl">
           <Trans

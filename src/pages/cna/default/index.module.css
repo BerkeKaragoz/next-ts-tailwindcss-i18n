@@ -119,3 +119,16 @@
     flex-direction: column;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .code {
+    background: #1a1a1a;
+  }
+
+  .logo {
+    background: #fafafa;
+    outline: 6px solid #fafafa;
+    border-radius: 4px;
+    margin-left: 1rem;
+  }
+}

@@ -3,11 +3,12 @@ const plugin = require("tailwindcss/plugin");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  //mode: "jit",
   purge: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class", // or 'media' or 'class', also darkMode increases bundle size noticeably
   theme: {
     textIndent: {
       none: "0rem",
@@ -33,7 +34,7 @@ module.exports = {
         primary: colors.sky,
         secondary: colors.amber,
         accent: colors.indigo,
-        background: colors.blueGray,
+        background: colors.coolGray,
       },
     },
   },

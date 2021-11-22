@@ -4,12 +4,6 @@ import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 
-const Error404Page: NextPage = () => {
-  const { t } = useTranslation();
-
-  return <ErrorPage code={404}>{t("page not found")}.</ErrorPage>;
-};
-
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { locale } = ctx;
 
@@ -18,6 +12,12 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       ...(await serverSideTranslations(locale || "en", [COMMON_TNS])),
     },
   };
+};
+
+const Error404Page: NextPage = () => {
+  const { t } = useTranslation();
+
+  return <ErrorPage code={404}>{t("page not found")}.</ErrorPage>;
 };
 
 export default Error404Page;

@@ -1,6 +1,11 @@
 {
+  "Test Suite": {
+    "prefix": "tsuite",
+    "scope": "javascriptreact,typescriptreact",
+    "body": ["describe(\"${1:Enter the suite name.}\", ()=> {", "$0", "})"]
+  },
   "Test Case": {
-    "prefix": "ttest",
+    "prefix": "tcase",
     "scope": "javascriptreact,typescriptreact",
     "body": ["it(\"${1:Enter the test name.}\", ()=> {", "$0", "})"]
   }

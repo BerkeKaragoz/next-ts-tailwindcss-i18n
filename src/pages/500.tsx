@@ -4,16 +4,6 @@ import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 
-const Error500Page: NextPage = () => {
-  const { t } = useTranslation();
-
-  return (
-    <ErrorPage code={500} redCode>
-      {t("server-side error occured")}.
-    </ErrorPage>
-  );
-};
-
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { locale } = ctx;
 
@@ -22,6 +12,16 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       ...(await serverSideTranslations(locale || "en", [COMMON_TNS])),
     },
   };
+};
+
+const Error500Page: NextPage = () => {
+  const { t } = useTranslation();
+
+  return (
+    <ErrorPage code={500} redCode>
+      {t("server-side error occured")}.
+    </ErrorPage>
+  );
 };
 
 export default Error500Page;

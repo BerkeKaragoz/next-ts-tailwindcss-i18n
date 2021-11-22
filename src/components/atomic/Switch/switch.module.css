@@ -1,0 +1,4 @@
+input:checked ~ .circle {
+  @apply bg-primary-400;
+  transform: translateX(100%);
+}

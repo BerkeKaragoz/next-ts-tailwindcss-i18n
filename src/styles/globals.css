@@ -6,8 +6,22 @@
   .link {
     @apply text-primary-600 hover:text-secondary-500 hover:underline;
   }
+
+  .dark .link {
+    @apply text-primary-400;
+  }
+}
+
+body {
+  color: black;
+  background-color: theme("colors.background.50");
 }
 
 a[href]:not([hidden]):not(.unstyled-a) {
   @apply link;
+}
+
+.dark body {
+  color: aliceblue;
+  background-color: theme("colors.background.900");
 }

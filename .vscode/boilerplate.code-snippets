@@ -25,6 +25,6 @@
   "const { t: gt } = useTranslation([GLOSSARY])": {
     "prefix": "0-UseTransGlossary",
     "scope": "javascriptreact,typescriptreact",
-    "body": ["const { t: gt } = useTranslation([GLOSSARY]);"]
+    "body": ["const { t: gt } = useTranslation([GLOSSARY_TNS]);"]
   }
 }

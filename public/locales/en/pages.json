@@ -17,7 +17,7 @@
     "cnaSamplesTerm": "CNA Samples",
     "cnaSamplesDesc": "You can check out modified <1>Create Next App</1> welcome pages as small examples.",
     "otherCheckSnippetsDesc": "Check the snippets under <1>.vscode</1>.",
-    "otherCareMotionDesc": "Care motion and color scheme preference.",
+    "otherCareMotionDesc": "Consider handling motion and color scheme preferences.",
     "otherTryToUseDesc": "Try to use text-direction sensitive properties.",
     "otherUseEmmetDesc": "Use <1>Emmet</1>."
   },
