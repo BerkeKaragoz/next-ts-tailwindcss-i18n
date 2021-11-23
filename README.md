@@ -1,4 +1,5 @@
 # next-ts-tailwindcss-i18n
+![next-ts-tailwindcss-i18n_picture](https://user-images.githubusercontent.com/34271483/143013818-25d6150b-55ab-4945-89c8-1c9334c5f227.png)
 
 **I made this boilerplate while developing [my personal website](https://berkekaragoz.com).**
 
