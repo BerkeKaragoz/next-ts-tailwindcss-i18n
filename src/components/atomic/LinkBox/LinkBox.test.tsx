@@ -3,7 +3,7 @@ import LinkBox from ".";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 import { createRouterMock } from "@/__mocks__/createRouter.mock";
 
-describe("LinkText", () => {
+describe("LinkBox", () => {
   const msg = "Testing message.";
   const href = "/testing";
   const router = createRouterMock({ pathname: "/" });

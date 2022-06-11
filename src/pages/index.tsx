@@ -1,4 +1,4 @@
-import LinkText from "@/components/atomic/LinkText/LinkText";
+import LinkText from "@/components/atomic/LinkText";
 import { Header } from "@/components/organism/Header/Header";
 import { COMMON_TNS, GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import { GetStaticProps, NextPage } from "next";
