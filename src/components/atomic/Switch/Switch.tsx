@@ -31,7 +31,11 @@ export const Switch = React.forwardRef<HTMLInputElement, Props>(
             {...rest}
           />
           <div //track
-            className="h-8 border-2 rounded-full w-14 bg-background-300 dark:border-background-600 dark:bg-background-700"
+            className={
+              styles.track +
+              " " +
+              "h-8 border-2 rounded-full w-14 bg-background-300 dark:border-background-600 dark:bg-background-700"
+            }
           />
           <div //circle
             className={
