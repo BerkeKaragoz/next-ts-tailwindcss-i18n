@@ -5,7 +5,7 @@ import LinkBox from "@/components/atomic/LinkBox";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { COMMON_TNS, GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import { Trans, useTranslation } from "react-i18next";
-import Header from "@/components/organism/Header/Header";
+import Header from "@/components/organism/Header";
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { locale } = ctx;

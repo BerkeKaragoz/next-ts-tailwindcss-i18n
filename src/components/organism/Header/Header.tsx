@@ -1,15 +1,14 @@
 import { COMMON_TNS, GLOSSARY_TNS } from "@/lib/i18n/consts";
 import { useTranslation } from "react-i18next";
-import styles from "./header.module.css";
 import { useTheme } from "next-themes";
 import React from "react";
 import { useRouter } from "next/router";
 import Switch from "@/components/atomic/Switch";
 
-type HeaderProps = {};
+type Props = {};
 
 /** Make sure to pass GLOSSARY_TNS and COMMON_TNS to where it is called */
-export const Header: React.FC<HeaderProps> = (props) => {
+export const Header: React.FC<Props> = (props) => {
   //const { children } = props;
   const router = useRouter();
   const { theme, setTheme } = useTheme();
@@ -79,4 +78,5 @@ export const Header: React.FC<HeaderProps> = (props) => {
   );
 };
 
+export type { Props as HeaderProps };
 export default Header;

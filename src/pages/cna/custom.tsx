@@ -1,5 +1,5 @@
 import LinkBox from "@/components/atomic/LinkBox";
-import Header from "@/components/organism/Header/Header";
+import Header from "@/components/organism/Header";
 import { COMMON_TNS, GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
