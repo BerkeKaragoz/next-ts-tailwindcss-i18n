@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
-import LinkBox from "@/components/atomic/LinkBox/LinkBox";
+import LinkBox from "@/components/atomic/LinkBox";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { COMMON_TNS, GLOSSARY_TNS, PAGES_TNS } from "@/lib/i18n/consts";
 import { Trans, useTranslation } from "react-i18next";

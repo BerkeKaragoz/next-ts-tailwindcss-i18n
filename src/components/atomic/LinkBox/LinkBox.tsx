@@ -27,12 +27,12 @@ const LinkBoxAnchor = React.forwardRef<
 
 LinkBoxAnchor.displayName = "LinkBoxAnchor";
 
-const LinkBox: React.FC<
-  LinkProps &
-    React.HTMLAttributes<HTMLDivElement> & {
-      onClick?: LinkBoxOnClick;
-    }
-> = (props) => {
+export type LinkBoxProps = LinkProps &
+  React.HTMLAttributes<HTMLDivElement> & {
+    onClick?: LinkBoxOnClick;
+  };
+
+const LinkBox: React.FC<LinkBoxProps> = (props) => {
   const {
     href,
     as,
