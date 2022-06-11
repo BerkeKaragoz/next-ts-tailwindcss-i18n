@@ -3,8 +3,7 @@ const plugin = require("tailwindcss/plugin");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  //mode: "jit",
-  purge: [
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -34,14 +33,9 @@ module.exports = {
         primary: colors.sky,
         secondary: colors.amber,
         accent: colors.indigo,
-        background: colors.coolGray,
+        background: colors.gray,
       },
     },
-  },
-  variants: {
-    animation: ["responsive", "motion-safe", "motion-reduce"],
-    textIndent: ["responsive"],
-    extend: {},
   },
   plugins: [
     require("tailwindcss-typography")({
