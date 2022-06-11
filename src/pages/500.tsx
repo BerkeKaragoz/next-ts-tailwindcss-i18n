@@ -1,4 +1,4 @@
-import ErrorPage from "@/components/template/ErrorPage/ErrorPage";
+import ErrorPage from "@/components/template/ErrorPage";
 import { COMMON_TNS } from "@/lib/i18n/consts";
 import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

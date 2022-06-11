@@ -5,14 +5,14 @@ import { UrlObject } from "url";
 import { ComponentPropsWithTranslation } from "@/lib/types/i18n";
 import Head from "next/head";
 
-type ErrorPageProps = ComponentPropsWithTranslation<{
+type Props = ComponentPropsWithTranslation<{
   code?: number | string;
   redCode?: boolean;
   href?: string | UrlObject;
   linkMessage?: string;
 }>;
 
-export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
+export const ErrorPageWithoutTranslation: React.FC<Props> = (props) => {
   const { children, t, code, redCode, href, linkMessage } = props;
 
   return (
@@ -50,4 +50,5 @@ export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
   );
 };
 
-export default withTranslation(COMMON_TNS)(ErrorPage);
+export type { Props as ErrorPageProps };
+export default withTranslation(COMMON_TNS)(ErrorPageWithoutTranslation);

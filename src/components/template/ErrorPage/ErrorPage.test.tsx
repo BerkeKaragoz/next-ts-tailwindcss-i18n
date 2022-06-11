@@ -1,8 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { ErrorPage } from "./ErrorPage"; // notice that we are not importing the default
+import { ErrorPageWithoutTranslation } from "."; // notice that we are not importing the default
 
 describe("Default Error Page", () => {
-  beforeAll(() => render(<ErrorPage t={(key: any) => key} />));
+  beforeAll(() =>
+    render(<ErrorPageWithoutTranslation t={(key: any) => key} />),
+  );
 
   it("renders the heading", () => {
     const heading = screen.getByRole("heading", {
@@ -27,9 +29,9 @@ describe("Customized Error Page", () => {
   const errorCode = 404;
   beforeAll(() =>
     render(
-      <ErrorPage t={(key: any) => key} code={errorCode}>
+      <ErrorPageWithoutTranslation t={(key: any) => key} code={errorCode}>
         {testingMessage}
-      </ErrorPage>,
+      </ErrorPageWithoutTranslation>,
     ),
   );
 
