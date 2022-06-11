@@ -4,7 +4,7 @@ import styles from "./header.module.css";
 import { useTheme } from "next-themes";
 import React from "react";
 import { useRouter } from "next/router";
-import Switch from "@/components/atomic/Switch/Switch";
+import Switch from "@/components/atomic/Switch";
 
 type HeaderProps = {};
 

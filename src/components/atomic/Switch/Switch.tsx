@@ -2,9 +2,9 @@ import styles from "./switch.module.css";
 import React from "react";
 import { nanoid } from "nanoid";
 
-type SwitchProps = React.InputHTMLAttributes<HTMLInputElement>;
+type Props = React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
+export const Switch = React.forwardRef<HTMLInputElement, Props>(
   (props, ref) => {
     const { children, disabled, onClick, ...rest } = props;
 
@@ -48,4 +48,5 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
 
 Switch.displayName = "App-Switch";
 
+export type { Props as SwitchProps };
 export default Switch;
